@@ -12,6 +12,8 @@ public class MemberRepository {
     @PersistenceContext
     private EntityManager em;
 
+
+
     public void save(Member member) {
         em.persist(member);
     }
@@ -33,4 +35,26 @@ public class MemberRepository {
                 .setParameter("academyName", academyName)
                 .getResultList();
     }
+
+    public List<Address> findByAddress1yName(String address1) {
+        return em.createQuery("select m from Member m where m.loginId = :address1", Address.class)
+                .setParameter("address1", address1)
+                .getResultList();
+    }
+
+    public List<Address> findByAddress2yName(String address2) {
+        return em.createQuery("select m from Member m where m.loginId = :address2", Address.class)
+                .setParameter("address2", address2)
+                .getResultList();
+    }
+
+    public List<Address> findByZipcodeName(String zipcode) {
+        return em.createQuery("select m from Member m where m.loginId = :address2", Address.class)
+                .setParameter("zipcode", zipcode)
+                .getResultList();
+    }
+
+
+
+
 }

@@ -25,4 +25,14 @@ public class MemberDto {
 
     @NotEmpty(message = "필수 항목 입니다.")
     private String academyName;
+
+    // ** 주소 및 ZIPCODE 입력란 
+    @NotEmpty(message = "필수 항목 입니다.")
+    private String address1;
+
+    @NotEmpty(message = "필수 항목 입니다.")
+    private String address2;
+
+    @NotEmpty(message = "필수 항목 입니다.")
+    private String zipcode;
 }
