@@ -41,7 +41,7 @@ public class MemberController {
         Academy academy = null; // ** 클래스가 null이라는 말은 필드는 유지하고 있는데 그 필드의 값들이 모두 0, 즉 null이라는 말이고
         Address address = null; // ** null값이 되어있지 않고 클래스가 선언만 되어있는 경우는 인스턴스 자체가 할당되지 않은 상태이기 때문에 그 클래스 안에 어떤 필드들도 없는 상태임
         if(!academies.isEmpty()) {
-            academy = academies.get(0);
+            academy = academies.get(0); // ** academies에 null이 있는 상태이니까 그걸 academy에 넣어라는 뜻이라는데 맞나?
         }  else {
             academy = new Academy(dto.getAcademyName());
             address = new Address(
